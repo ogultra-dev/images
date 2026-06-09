@@ -1,0 +1,179 @@
+[
+  {
+    "Name": "Minecraft Java: Vanilla",
+    "Description": "Official Minecraft Java Edition server from Mojang. Pure vanilla experience with no modifications.",
+    "Author": "ogultra",
+    "AuthorName": "OGUltra",
+    "Image": "ghcr.io/hydren-dev/yolks:java",
+    "Cmd": "",
+    "Env": ["START=java -Xms128M -XX:MaxRAMPercentage=95.0 -Dterminal.jline=false -Dterminal.ansi=true -jar server.jar --nogui"],
+    "Scripts": {
+      "Install": [
+        { "Uri": "https://api.papermc.io/v2/projects/paper/versions/1.21.1/builds/latest/downloads/paper-1.21.1-latest.jar", "Path": "server.jar" }
+      ]
+    },
+    "Variables": { "Version": { "type": "text", "default": "1.21.1", "required": true } },
+    "Meta": { "Version": "OGUltra Images v1" }
+  },
+  {
+    "Name": "Minecraft Java: PaperMC",
+    "Description": "PaperMC — high-performance fork of Spigot. Best for most servers. Huge plugin ecosystem and excellent performance.",
+    "Author": "ogultra",
+    "AuthorName": "OGUltra",
+    "Image": "ghcr.io/hydren-dev/yolks:java",
+    "Cmd": "",
+    "Env": ["START=java -Xms128M -XX:MaxRAMPercentage=95.0 -Dterminal.jline=false -Dterminal.ansi=true -jar server.jar --nogui"],
+    "Scripts": {
+      "Install": [
+        { "Uri": "https://api.papermc.io/v2/projects/paper/versions/{{Version}}/builds/latest/downloads/paper-{{Version}}-latest.jar", "Path": "server.jar" },
+        { "Uri": "https://raw.githubusercontent.com/hydren-dev/images_v2/main/spigotmc/server.properties", "Path": "server.properties" }
+      ]
+    },
+    "Variables": { "Version": { "type": "text", "default": "1.21.1", "required": true } },
+    "Meta": { "Version": "OGUltra Images v1" }
+  },
+  {
+    "Name": "Minecraft Java: SpigotMC",
+    "Description": "SpigotMC — the original high-performance Minecraft server with plugin support. Compatible with Bukkit plugins.",
+    "Author": "ogultra",
+    "AuthorName": "OGUltra",
+    "Image": "ghcr.io/hydren-dev/yolks:java",
+    "Cmd": "",
+    "Env": ["START=java -Xms128M -XX:MaxRAMPercentage=95.0 -Dterminal.jline=false -Dterminal.ansi=true -jar server.jar --nogui"],
+    "Scripts": {
+      "Install": [
+        { "Uri": "https://download.getbukkit.org/spigot/spigot-{{Version}}.jar", "Path": "server.jar" },
+        { "Uri": "https://raw.githubusercontent.com/hydren-dev/images_v2/main/spigotmc/server.properties", "Path": "server.properties" }
+      ]
+    },
+    "Variables": { "Version": { "type": "text", "default": "1.21", "required": true } },
+    "Meta": { "Version": "OGUltra Images v1" }
+  },
+  {
+    "Name": "Minecraft Java: Purpur",
+    "Description": "Purpur — drop-in replacement for Paper servers. Adds hundreds of extra config options and mob behaviours not found in Paper.",
+    "Author": "ogultra",
+    "AuthorName": "OGUltra",
+    "Image": "ghcr.io/hydren-dev/yolks:java",
+    "Cmd": "",
+    "Env": ["START=java -Xms128M -XX:MaxRAMPercentage=95.0 -Dterminal.jline=false -Dterminal.ansi=true -jar server.jar --nogui"],
+    "Scripts": {
+      "Install": [
+        { "Uri": "https://api.purpurmc.org/v2/purpur/{{Version}}/latest/download", "Path": "server.jar" }
+      ]
+    },
+    "Variables": { "Version": { "type": "text", "default": "1.21.1", "required": true } },
+    "Meta": { "Version": "OGUltra Images v1" }
+  },
+  {
+    "Name": "Minecraft Java: Fabric",
+    "Description": "Fabric — lightweight modding toolchain for Minecraft Java Edition. Ideal for mods like Lithium, Sodium, and carpet.",
+    "Author": "ogultra",
+    "AuthorName": "OGUltra",
+    "Image": "ghcr.io/hydren-dev/yolks:java",
+    "Cmd": "",
+    "Env": ["START=java -Xms128M -XX:MaxRAMPercentage=95.0 -Dterminal.jline=false -Dterminal.ansi=true -jar fabric-server-launch.jar --nogui"],
+    "Scripts": {
+      "Install": [
+        { "Uri": "https://maven.fabricmc.net/net/fabricmc/fabric-installer/1.0.1/fabric-installer-1.0.1.jar", "Path": "fabric-installer.jar" }
+      ]
+    },
+    "Variables": {
+      "Version": { "type": "text", "default": "1.21.1", "required": true },
+      "LoaderVersion": { "type": "text", "default": "0.16.5", "required": false }
+    },
+    "Meta": { "Version": "OGUltra Images v1" }
+  },
+  {
+    "Name": "Minecraft Java: Forge",
+    "Description": "MinecraftForge — the most popular Minecraft Java modding platform. Thousands of mods available.",
+    "Author": "ogultra",
+    "AuthorName": "OGUltra",
+    "Image": "ghcr.io/hydren-dev/yolks:java",
+    "Cmd": "",
+    "Env": ["START=java -Xms128M -XX:MaxRAMPercentage=95.0 -Dterminal.jline=false -Dterminal.ansi=true @user_jvm_args.txt @libraries/net/minecraftforge/forge/{{Version}}/unix_args.txt nogui"],
+    "Scripts": { "Install": [] },
+    "Variables": {
+      "Version": { "type": "text", "default": "1.20.1-47.2.0", "required": true }
+    },
+    "Meta": { "Version": "OGUltra Images v1" }
+  },
+  {
+    "Name": "Minecraft Proxy: Velocity",
+    "Description": "Velocity — modern, next-generation Minecraft proxy. Fast, secure, and designed for large networks.",
+    "Author": "ogultra",
+    "AuthorName": "OGUltra",
+    "Image": "ghcr.io/hydren-dev/yolks:java",
+    "Cmd": "",
+    "Env": ["START=java -Xms128M -XX:MaxRAMPercentage=95.0 -XX:+UseG1GC -XX:G1HeapRegionSize=4M -XX:+UnlockExperimentalVMOptions -XX:+ParallelRefProcEnabled -XX:+AlwaysPreTouch -XX:MaxInlineLevel=15 -jar velocity.jar"],
+    "Scripts": {
+      "Install": [
+        { "Uri": "https://api.papermc.io/v2/projects/velocity/versions/3.3.0-SNAPSHOT/builds/latest/downloads/velocity-3.3.0-SNAPSHOT-latest.jar", "Path": "velocity.jar" }
+      ]
+    },
+    "Variables": {},
+    "Meta": { "Version": "OGUltra Images v1" }
+  },
+  {
+    "Name": "Minecraft Proxy: Waterfall",
+    "Description": "Waterfall — fork of BungeeCord with improved performance, stability, and additional features.",
+    "Author": "ogultra",
+    "AuthorName": "OGUltra",
+    "Image": "ghcr.io/hydren-dev/yolks:java",
+    "Cmd": "",
+    "Env": ["START=java -Xms128M -XX:MaxRAMPercentage=95.0 -Dterminal.jline=false -Dterminal.ansi=true -jar waterfall.jar"],
+    "Scripts": {
+      "Install": [
+        { "Uri": "https://api.papermc.io/v2/projects/waterfall/versions/1.21/builds/latest/downloads/waterfall-1.21-latest.jar", "Path": "waterfall.jar" }
+      ]
+    },
+    "Variables": {},
+    "Meta": { "Version": "OGUltra Images v1" }
+  },
+  {
+    "Name": "Minecraft Proxy: BungeeCord",
+    "Description": "BungeeCord — the original Minecraft proxy for connecting multiple servers into a network.",
+    "Author": "ogultra",
+    "AuthorName": "OGUltra",
+    "Image": "ghcr.io/hydren-dev/yolks:java",
+    "Cmd": "",
+    "Env": ["START=java -Xms128M -XX:MaxRAMPercentage=95.0 -Dterminal.jline=false -Dterminal.ansi=true -jar BungeeCord.jar"],
+    "Scripts": {
+      "Install": [
+        { "Uri": "https://ci.md-5.net/job/BungeeCord/lastSuccessfulBuild/artifact/bootstrap/target/BungeeCord.jar", "Path": "BungeeCord.jar" }
+      ]
+    },
+    "Variables": {},
+    "Meta": { "Version": "OGUltra Images v1" }
+  },
+  {
+    "Name": "Minecraft Bedrock: PocketMine-MP",
+    "Description": "PocketMine-MP — PHP-based server for Minecraft Bedrock Edition. Rich plugin ecosystem.",
+    "Author": "ogultra",
+    "AuthorName": "OGUltra",
+    "Image": "ghcr.io/hydren-dev/yolks:php8",
+    "Cmd": "",
+    "Env": ["START=php PocketMine-MP.phar --no-wizard"],
+    "Scripts": {
+      "Install": [
+        { "Uri": "https://github.com/pmmp/PocketMine-MP/releases/latest/download/PocketMine-MP.phar", "Path": "PocketMine-MP.phar" }
+      ]
+    },
+    "Variables": {},
+    "Meta": { "Version": "OGUltra Images v1" }
+  },
+  {
+    "Name": "Minecraft Bedrock: Official Server",
+    "Description": "Official Minecraft Bedrock Dedicated Server by Mojang. For Bedrock/PE clients.",
+    "Author": "ogultra",
+    "AuthorName": "OGUltra",
+    "Image": "ghcr.io/hydren-dev/yolks:debian",
+    "Cmd": "",
+    "Env": ["START=LD_LIBRARY_PATH=. ./bedrock_server"],
+    "Scripts": { "Install": [] },
+    "Variables": {
+      "Version": { "type": "text", "default": "latest", "required": false }
+    },
+    "Meta": { "Version": "OGUltra Images v1" }
+  }
+]

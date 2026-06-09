@@ -1,0 +1,96 @@
+[
+  {
+    "Name": "Voice: TeamSpeak 3",
+    "Description": "TeamSpeak 3 Server — low-latency voice communication server. Popular for gaming communities and guilds.",
+    "Author": "ogultra",
+    "AuthorName": "OGUltra",
+    "Image": "teamspeak:latest",
+    "Cmd": "",
+    "Env": [
+      "TS3SERVER_LICENSE=accept",
+      "TS3SERVER_DB_PLUGIN=ts3db_sqlite3",
+      "TS3SERVER_DB_SQLCREATEPATH=create_sqlite",
+      "TS3SERVER_FILETRANSFER_PORT=30033",
+      "TS3SERVER_VOICE_PORT={{VoicePort}}"
+    ],
+    "Scripts": { "Install": [] },
+    "Variables": {
+      "VoicePort": { "type": "number", "default": "9987", "required": true }
+    },
+    "Meta": { "Version": "OGUltra Images v1" }
+  },
+  {
+    "Name": "Voice: Mumble (Murmur)",
+    "Description": "Mumble/Murmur — open-source, low-latency, high-quality voice chat server. Free and self-hosted.",
+    "Author": "ogultra",
+    "AuthorName": "OGUltra",
+    "Image": "ghcr.io/hydren-dev/yolks:debian",
+    "Cmd": "",
+    "Env": ["START=murmurd -ini murmur.ini"],
+    "Scripts": { "Install": [] },
+    "Variables": {
+      "Port": { "type": "number", "default": "64738", "required": true },
+      "MaxUsers": { "type": "number", "default": "100", "required": false },
+      "Password": { "type": "text", "default": "", "required": false }
+    },
+    "Meta": { "Version": "OGUltra Images v1" }
+  },
+  {
+    "Name": "Voice: Lavalink",
+    "Description": "Lavalink — standalone audio sending node for Discord bots. Supports YouTube, SoundCloud, Twitch and more.",
+    "Author": "ogultra",
+    "AuthorName": "OGUltra",
+    "Image": "ghcr.io/hydren-dev/yolks:java",
+    "Cmd": "",
+    "Env": ["START=java -Xms128M -XX:MaxRAMPercentage=95.0 -jar Lavalink.jar"],
+    "Scripts": {
+      "Install": [
+        { "Uri": "https://github.com/lavalink-devs/Lavalink/releases/latest/download/Lavalink.jar", "Path": "Lavalink.jar" },
+        { "Uri": "https://raw.githubusercontent.com/lavalink-devs/Lavalink/dev/LavalinkServer/application.yml.example", "Path": "application.yml" }
+      ]
+    },
+    "Variables": {
+      "LavalinkPassword": { "type": "text", "default": "youshallnotpass", "required": true },
+      "Port": { "type": "number", "default": "2333", "required": false }
+    },
+    "Meta": { "Version": "OGUltra Images v1" }
+  },
+  {
+    "Name": "Voice: Discord Bot (Node.js)",
+    "Description": "Discord bot template using Node.js and discord.js v14. Perfect base for music bots, moderation bots, etc.",
+    "Author": "ogultra",
+    "AuthorName": "OGUltra",
+    "Image": "ghcr.io/hydren-dev/yolks:nodejs_22",
+    "Cmd": "",
+    "Env": [
+      "START=npm install && node index.js",
+      "DISCORD_TOKEN={{DiscordToken}}"
+    ],
+    "Scripts": {
+      "Install": [
+        { "Uri": "https://raw.githubusercontent.com/discordjs/discord.js/main/packages/discord.js/package.json", "Path": "package.json" }
+      ]
+    },
+    "Variables": {
+      "DiscordToken": { "type": "text", "default": "YOUR_BOT_TOKEN_HERE", "required": true }
+    },
+    "Meta": { "Version": "OGUltra Images v1" }
+  },
+  {
+    "Name": "Voice: Discord Bot (Python)",
+    "Description": "Discord bot using Python and discord.py. Great for bots with complex logic, AI integration, or data processing.",
+    "Author": "ogultra",
+    "AuthorName": "OGUltra",
+    "Image": "ghcr.io/hydren-dev/yolks:python",
+    "Cmd": "",
+    "Env": [
+      "START=pip install -r requirements.txt && python bot.py",
+      "DISCORD_TOKEN={{DiscordToken}}"
+    ],
+    "Scripts": { "Install": [] },
+    "Variables": {
+      "DiscordToken": { "type": "text", "default": "YOUR_BOT_TOKEN_HERE", "required": true }
+    },
+    "Meta": { "Version": "OGUltra Images v1" }
+  }
+]

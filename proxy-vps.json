@@ -1,0 +1,101 @@
+[
+  {
+    "Name": "Proxy: Nginx Reverse Proxy",
+    "Description": "Nginx — high-performance HTTP server and reverse proxy. Use for websites, load balancing, and SSL termination.",
+    "Author": "ogultra",
+    "AuthorName": "OGUltra",
+    "Image": "nginx:alpine",
+    "Cmd": "",
+    "Env": ["START=nginx -g 'daemon off;'"],
+    "Scripts": { "Install": [] },
+    "Variables": {
+      "HttpPort": { "type": "number", "default": "80", "required": true },
+      "HttpsPort": { "type": "number", "default": "443", "required": false }
+    },
+    "Meta": { "Version": "OGUltra Images v1" }
+  },
+  {
+    "Name": "Proxy: HAProxy",
+    "Description": "HAProxy — reliable, high-performance TCP/HTTP load balancer and proxy. Industry standard for high availability.",
+    "Author": "ogultra",
+    "AuthorName": "OGUltra",
+    "Image": "haproxy:latest",
+    "Cmd": "",
+    "Env": ["START=haproxy -f /usr/local/etc/haproxy/haproxy.cfg"],
+    "Scripts": { "Install": [] },
+    "Variables": {
+      "StatsPort": { "type": "number", "default": "8404", "required": false }
+    },
+    "Meta": { "Version": "OGUltra Images v1" }
+  },
+  {
+    "Name": "Proxy: Caddy",
+    "Description": "Caddy — modern web server with automatic HTTPS. Easiest to configure, handles SSL certs automatically.",
+    "Author": "ogultra",
+    "AuthorName": "OGUltra",
+    "Image": "caddy:latest",
+    "Cmd": "",
+    "Env": ["START=caddy run --config /etc/caddy/Caddyfile --adapter caddyfile"],
+    "Scripts": { "Install": [] },
+    "Variables": {
+      "Domain": { "type": "text", "default": "example.com", "required": true }
+    },
+    "Meta": { "Version": "OGUltra Images v1" }
+  },
+  {
+    "Name": "VPS: Ubuntu 22.04 LTS",
+    "Description": "Ubuntu 22.04 LTS container. Full Ubuntu environment for running any custom software. SSH via port 22.",
+    "Author": "ogultra",
+    "AuthorName": "OGUltra",
+    "Image": "ubuntu:22.04",
+    "Cmd": "",
+    "Env": ["START=bash -c 'apt-get update -qq && apt-get install -y -qq openssh-server && echo root:{{RootPassword}} | chpasswd && sed -i \"s/#PermitRootLogin.*/PermitRootLogin yes/\" /etc/ssh/sshd_config && mkdir -p /run/sshd && exec /usr/sbin/sshd -D'"],
+    "Scripts": { "Install": [] },
+    "Variables": {
+      "RootPassword": { "type": "text", "default": "changeme123!", "required": true }
+    },
+    "Meta": { "Version": "OGUltra Images v1" }
+  },
+  {
+    "Name": "VPS: Debian 12",
+    "Description": "Debian 12 Bookworm container. Minimal, stable Linux environment for advanced users.",
+    "Author": "ogultra",
+    "AuthorName": "OGUltra",
+    "Image": "debian:bookworm-slim",
+    "Cmd": "",
+    "Env": ["START=bash -c 'apt-get update -qq && apt-get install -y -qq openssh-server && echo root:{{RootPassword}} | chpasswd && sed -i \"s/#PermitRootLogin.*/PermitRootLogin yes/\" /etc/ssh/sshd_config && mkdir -p /run/sshd && exec /usr/sbin/sshd -D'"],
+    "Scripts": { "Install": [] },
+    "Variables": {
+      "RootPassword": { "type": "text", "default": "changeme123!", "required": true }
+    },
+    "Meta": { "Version": "OGUltra Images v1" }
+  },
+  {
+    "Name": "VPS: Alpine Linux",
+    "Description": "Alpine Linux — minimal Docker-friendly distribution. Very small footprint (~5MB). Great for lightweight services.",
+    "Author": "ogultra",
+    "AuthorName": "OGUltra",
+    "Image": "alpine:latest",
+    "Cmd": "",
+    "Env": ["START=sh -c 'apk add --no-cache openssh && echo root:{{RootPassword}} | chpasswd && sed -i \"s/#PermitRootLogin.*/PermitRootLogin yes/\" /etc/ssh/sshd_config && ssh-keygen -A && exec /usr/sbin/sshd -D'"],
+    "Scripts": { "Install": [] },
+    "Variables": {
+      "RootPassword": { "type": "text", "default": "changeme123!", "required": true }
+    },
+    "Meta": { "Version": "OGUltra Images v1" }
+  },
+  {
+    "Name": "VPS: CentOS Stream 9",
+    "Description": "CentOS Stream 9 container. RHEL-compatible Linux environment. Popular for enterprise-style deployments.",
+    "Author": "ogultra",
+    "AuthorName": "OGUltra",
+    "Image": "centos:stream9",
+    "Cmd": "",
+    "Env": ["START=bash -c 'dnf install -y openssh-server && echo root:{{RootPassword}} | chpasswd && sed -i \"s/#PermitRootLogin.*/PermitRootLogin yes/\" /etc/ssh/sshd_config && ssh-keygen -A && exec /usr/sbin/sshd -D'"],
+    "Scripts": { "Install": [] },
+    "Variables": {
+      "RootPassword": { "type": "text", "default": "changeme123!", "required": true }
+    },
+    "Meta": { "Version": "OGUltra Images v1" }
+  }
+]

@@ -1,0 +1,87 @@
+[
+  {
+    "Name": "Generic: Node.js",
+    "Description": "Generic Node.js runtime. Upload your project files and set a start command. Supports npm/yarn.",
+    "Author": "ogultra",
+    "AuthorName": "OGUltra",
+    "Image": "ghcr.io/hydren-dev/yolks:nodejs_22",
+    "Cmd": "",
+    "Env": ["START={{StartCommand}}"],
+    "Scripts": { "Install": [] },
+    "Variables": {
+      "StartCommand": { "type": "text", "default": "npm install && node index.js", "required": true },
+      "NodeVersion": { "type": "text", "default": "22", "required": false }
+    },
+    "Meta": { "Version": "OGUltra Images v1" }
+  },
+  {
+    "Name": "Generic: Python 3",
+    "Description": "Generic Python 3 runtime. Run any Python application. pip is available for dependencies.",
+    "Author": "ogultra",
+    "AuthorName": "OGUltra",
+    "Image": "ghcr.io/hydren-dev/yolks:python",
+    "Cmd": "",
+    "Env": ["START={{StartCommand}}"],
+    "Scripts": { "Install": [] },
+    "Variables": {
+      "StartCommand": { "type": "text", "default": "pip install -r requirements.txt && python main.py", "required": true }
+    },
+    "Meta": { "Version": "OGUltra Images v1" }
+  },
+  {
+    "Name": "Generic: Java",
+    "Description": "Generic Java runtime (JDK 21). Run any Java application or JAR file. Maven and Gradle available.",
+    "Author": "ogultra",
+    "AuthorName": "OGUltra",
+    "Image": "ghcr.io/hydren-dev/yolks:java",
+    "Cmd": "",
+    "Env": ["START={{StartCommand}}"],
+    "Scripts": { "Install": [] },
+    "Variables": {
+      "StartCommand": { "type": "text", "default": "java -jar app.jar", "required": true }
+    },
+    "Meta": { "Version": "OGUltra Images v1" }
+  },
+  {
+    "Name": "Generic: Go",
+    "Description": "Generic Go runtime. Build and run any Go application. go modules supported.",
+    "Author": "ogultra",
+    "AuthorName": "OGUltra",
+    "Image": "golang:1.22-bookworm",
+    "Cmd": "",
+    "Env": ["START={{StartCommand}}"],
+    "Scripts": { "Install": [] },
+    "Variables": {
+      "StartCommand": { "type": "text", "default": "go run .", "required": true }
+    },
+    "Meta": { "Version": "OGUltra Images v1" }
+  },
+  {
+    "Name": "Generic: Ruby",
+    "Description": "Generic Ruby runtime. Run any Ruby application. Bundler available for gem management.",
+    "Author": "ogultra",
+    "AuthorName": "OGUltra",
+    "Image": "ruby:3.3-slim",
+    "Cmd": "",
+    "Env": ["START={{StartCommand}}"],
+    "Scripts": { "Install": [] },
+    "Variables": {
+      "StartCommand": { "type": "text", "default": "bundle install && ruby app.rb", "required": true }
+    },
+    "Meta": { "Version": "OGUltra Images v1" }
+  },
+  {
+    "Name": "Generic: Rust",
+    "Description": "Generic Rust runtime. Build and run Rust projects with cargo. Fast and memory-safe.",
+    "Author": "ogultra",
+    "AuthorName": "OGUltra",
+    "Image": "rust:1.80-slim-bookworm",
+    "Cmd": "",
+    "Env": ["START={{StartCommand}}"],
+    "Scripts": { "Install": [] },
+    "Variables": {
+      "StartCommand": { "type": "text", "default": "cargo run --release", "required": true }
+    },
+    "Meta": { "Version": "OGUltra Images v1" }
+  }
+]

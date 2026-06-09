@@ -1,0 +1,77 @@
+[
+  {
+    "Name": "RDP: Ubuntu 22.04 XFCE (XRDP)",
+    "Description": "Ubuntu 22.04 with XFCE desktop and XRDP. Connect via Remote Desktop (RDP) on port 3389. Lightweight GUI.",
+    "Author": "ogultra",
+    "AuthorName": "OGUltra",
+    "Image": "ubuntu:22.04",
+    "Cmd": "",
+    "Env": ["START=bash -c 'apt-get update -qq && apt-get install -y -qq xrdp xfce4 xfce4-goodies dbus-x11 x11-xserver-utils && echo root:{{RootPassword}} | chpasswd && echo xfce4-session > /root/.xsession && sed -i \"s/port=3389/port={{RdpPort}}/\" /etc/xrdp/xrdp.ini && service dbus start && exec xrdp-sesman'"],
+    "Scripts": { "Install": [] },
+    "Variables": {
+      "RootPassword": { "type": "text", "default": "OGUltra@RDP1", "required": true },
+      "RdpPort": { "type": "number", "default": "3389", "required": true }
+    },
+    "Meta": { "Version": "OGUltra Images v1" }
+  },
+  {
+    "Name": "RDP: Ubuntu 22.04 KDE (XRDP)",
+    "Description": "Ubuntu 22.04 with KDE Plasma desktop and XRDP. Full-featured modern desktop via Remote Desktop.",
+    "Author": "ogultra",
+    "AuthorName": "OGUltra",
+    "Image": "ubuntu:22.04",
+    "Cmd": "",
+    "Env": ["START=bash -c 'apt-get update -qq && DEBIAN_FRONTEND=noninteractive apt-get install -y -qq xrdp kde-plasma-desktop dbus-x11 && echo root:{{RootPassword}} | chpasswd && echo startplasma-x11 > /root/.xsession && sed -i \"s/port=3389/port={{RdpPort}}/\" /etc/xrdp/xrdp.ini && service dbus start && exec xrdp-sesman'"],
+    "Scripts": { "Install": [] },
+    "Variables": {
+      "RootPassword": { "type": "text", "default": "OGUltra@RDP1", "required": true },
+      "RdpPort": { "type": "number", "default": "3389", "required": true }
+    },
+    "Meta": { "Version": "OGUltra Images v1" }
+  },
+  {
+    "Name": "RDP: Ubuntu 20.04 LXDE (Lightweight XRDP)",
+    "Description": "Ubuntu 20.04 with LXDE — super lightweight desktop environment. Minimal RAM usage. Perfect for basic tasks.",
+    "Author": "ogultra",
+    "AuthorName": "OGUltra",
+    "Image": "ubuntu:20.04",
+    "Cmd": "",
+    "Env": ["START=bash -c 'apt-get update -qq && DEBIAN_FRONTEND=noninteractive apt-get install -y -qq xrdp lxde dbus-x11 && echo root:{{RootPassword}} | chpasswd && echo startlxde > /root/.xsession && sed -i \"s/port=3389/port={{RdpPort}}/\" /etc/xrdp/xrdp.ini && service dbus start && exec xrdp-sesman'"],
+    "Scripts": { "Install": [] },
+    "Variables": {
+      "RootPassword": { "type": "text", "default": "OGUltra@RDP1", "required": true },
+      "RdpPort": { "type": "number", "default": "3389", "required": true }
+    },
+    "Meta": { "Version": "OGUltra Images v1" }
+  },
+  {
+    "Name": "RDP: Kali Linux (XRDP)",
+    "Description": "Kali Linux with XFCE and XRDP. Full Kali penetration testing toolkit accessible via Remote Desktop.",
+    "Author": "ogultra",
+    "AuthorName": "OGUltra",
+    "Image": "kalilinux/kali-rolling:latest",
+    "Cmd": "",
+    "Env": ["START=bash -c 'apt-get update -qq && apt-get install -y -qq xrdp xfce4 kali-desktop-xfce dbus-x11 && echo root:{{RootPassword}} | chpasswd && echo xfce4-session > /root/.xsession && sed -i \"s/port=3389/port={{RdpPort}}/\" /etc/xrdp/xrdp.ini && service dbus start && exec xrdp-sesman'"],
+    "Scripts": { "Install": [] },
+    "Variables": {
+      "RootPassword": { "type": "text", "default": "OGUltra@RDP1", "required": true },
+      "RdpPort": { "type": "number", "default": "3389", "required": true }
+    },
+    "Meta": { "Version": "OGUltra Images v1" }
+  },
+  {
+    "Name": "RDP: Debian 12 XFCE (XRDP)",
+    "Description": "Debian 12 with XFCE desktop and XRDP. Stable, lightweight remote desktop environment.",
+    "Author": "ogultra",
+    "AuthorName": "OGUltra",
+    "Image": "debian:bookworm",
+    "Cmd": "",
+    "Env": ["START=bash -c 'apt-get update -qq && apt-get install -y -qq xrdp xfce4 xfce4-goodies dbus-x11 && echo root:{{RootPassword}} | chpasswd && echo xfce4-session > /root/.xsession && sed -i \"s/port=3389/port={{RdpPort}}/\" /etc/xrdp/xrdp.ini && service dbus start && exec xrdp-sesman'"],
+    "Scripts": { "Install": [] },
+    "Variables": {
+      "RootPassword": { "type": "text", "default": "OGUltra@RDP1", "required": true },
+      "RdpPort": { "type": "number", "default": "3389", "required": true }
+    },
+    "Meta": { "Version": "OGUltra Images v1" }
+  }
+]
