@@ -7,7 +7,7 @@ Official image/egg collection for **OgUltra Panel** (fork of Draco/Teryx/Skyport
 Import all images at once using the seed URL:
 
 ```
-https://raw.githubusercontent.com/YOUR_USERNAME/ogultra-images/main/seed/ogultra-seed.json
+https://raw.githubusercontent.com/ogultra-dev/images/main/seed/ogultra-seed.json
 ```
 
 Replace `YOUR_USERNAME` with your GitHub username after uploading.
