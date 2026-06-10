@@ -1,0 +1,24 @@
+{
+  "Image": "ghcr.io/skyport-team/images/java:21",
+  "Cmd": "",
+  "Env": [
+    "START=php PocketMine-MP.phar --no-wizard"
+  ],
+  "StopCommand": "stop",
+  "Scripts": {
+    "Install": [
+      {
+        "Uri": "https://github.com/pmmp/PocketMine-MP/releases/latest/download/PocketMine-MP.phar",
+        "Path": "PocketMine-MP.phar"
+      }
+    ]
+  },
+  "Variables": {},
+  "Name": "Minecraft Bedrock: PocketMine-MP",
+  "Description": "PocketMine-MP is an open-source server software for Minecraft Bedrock Edition with a plugin API. Written in PHP.",
+  "Author": "admin@ogultra.net",
+  "AuthorName": "OgUltra Team",
+  "Meta": {
+    "Version": "OgUltra Images (v1)"
+  }
+}

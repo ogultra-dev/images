@@ -1,0 +1,42 @@
+{
+  "Image": "ghcr.io/skyport-team/images/java:21",
+  "AltImages": [
+    "ghcr.io/skyport-team/images/java:21",
+    "ghcr.io/skyport-team/images/java:17"
+  ],
+  "Cmd": "",
+  "Env": [
+    "START=java -Xms128M -XX:MaxRAMPercentage=95.0 -Dterminal.jline=false -Dterminal.ansi=true -jar server.jar"
+  ],
+  "StopCommand": "stop",
+  "features": [
+    "eula"
+  ],
+  "Scripts": {
+    "Install": [
+      {
+        "Uri": "https://api.papermc.io/v2/projects/folia/versions/{{Version}}/builds/{{Build}}/downloads/folia-{{Version}}-{{Build}}.jar",
+        "Path": "server.jar"
+      }
+    ]
+  },
+  "Variables": {
+    "Version": {
+      "type": "text",
+      "default": "1.21.4",
+      "required": true
+    },
+    "Build": {
+      "type": "text",
+      "default": "latest",
+      "required": true
+    }
+  },
+  "Name": "Minecraft Java: Folia",
+  "Description": "Folia is a PaperMC fork that adds regionized multithreading. Designed for large servers with many players spread across the world.",
+  "Author": "admin@ogultra.net",
+  "AuthorName": "OgUltra Team",
+  "Meta": {
+    "Version": "OgUltra Images (v1)"
+  }
+}

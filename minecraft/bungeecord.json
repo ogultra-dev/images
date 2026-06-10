@@ -1,0 +1,29 @@
+{
+  "Image": "ghcr.io/skyport-team/images/java:21",
+  "AltImages": [
+    "ghcr.io/skyport-team/images/java:21",
+    "ghcr.io/skyport-team/images/java:17",
+    "ghcr.io/skyport-team/images/java:16"
+  ],
+  "Cmd": "",
+  "Env": [
+    "START=java -Xms128M -XX:MaxRAMPercentage=95.0 -jar BungeeCord.jar"
+  ],
+  "StopCommand": "end",
+  "Scripts": {
+    "Install": [
+      {
+        "Uri": "https://ci.md-5.net/job/BungeeCord/lastSuccessfulBuild/artifact/bootstrap/target/BungeeCord.jar",
+        "Path": "BungeeCord.jar"
+      }
+    ]
+  },
+  "Variables": {},
+  "Name": "Minecraft Java: BungeeCord",
+  "Description": "BungeeCord is a proxy server that allows players to move between multiple Minecraft servers without disconnecting. Used to build multi-server networks.",
+  "Author": "admin@ogultra.net",
+  "AuthorName": "OgUltra Team",
+  "Meta": {
+    "Version": "OgUltra Images (v1)"
+  }
+}

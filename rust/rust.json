@@ -1,0 +1,55 @@
+{
+  "Image": "ubuntu:22.04",
+  "Cmd": "",
+  "Env": [
+    "START=./RustDedicated -batchmode -nographics -server.port {{Port}} -server.level {{Level}} -server.seed {{Seed}} -server.maxplayers {{MaxPlayers}} -server.hostname {{ServerName}} -server.identity {{Identity}}"
+  ],
+  "StopCommand": "quit",
+  "Scripts": {
+    "Install": [
+      {
+        "Uri": "https://steamcdn-a.akamaihd.net/client/installer/steamcmd_linux.tar.gz",
+        "Path": "steamcmd.tar.gz"
+      }
+    ]
+  },
+  "Variables": {
+    "Port": {
+      "type": "text",
+      "default": "28015",
+      "required": true
+    },
+    "Level": {
+      "type": "text",
+      "default": "Procedural Map",
+      "required": false
+    },
+    "Seed": {
+      "type": "text",
+      "default": "12345",
+      "required": false
+    },
+    "MaxPlayers": {
+      "type": "text",
+      "default": "100",
+      "required": false
+    },
+    "ServerName": {
+      "type": "text",
+      "default": "OgUltra Rust Server",
+      "required": false
+    },
+    "Identity": {
+      "type": "text",
+      "default": "rustserver",
+      "required": false
+    }
+  },
+  "Name": "Game: Rust",
+  "Description": "Rust is a multiplayer survival game developed by Facepunch Studios. Players must gather resources, craft tools, build shelters, and survive against other players.",
+  "Author": "admin@ogultra.net",
+  "AuthorName": "OgUltra Team",
+  "Meta": {
+    "Version": "OgUltra Images (v1)"
+  }
+}

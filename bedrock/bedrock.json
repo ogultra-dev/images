@@ -1,0 +1,30 @@
+{
+  "Image": "ubuntu:22.04",
+  "Cmd": "",
+  "Env": [
+    "START=LD_LIBRARY_PATH=. ./bedrock_server"
+  ],
+  "StopCommand": "stop",
+  "Scripts": {
+    "Install": [
+      {
+        "Uri": "https://minecraft.azureedge.net/bin-linux/bedrock-server-{{Version}}.zip",
+        "Path": "bedrock-server.zip"
+      }
+    ]
+  },
+  "Variables": {
+    "Version": {
+      "type": "text",
+      "default": "1.21.60.10",
+      "required": true
+    }
+  },
+  "Name": "Minecraft Bedrock: Vanilla",
+  "Description": "The official Minecraft Bedrock Edition dedicated server for Windows 10/11, mobile, console, and cross-platform play.",
+  "Author": "admin@ogultra.net",
+  "AuthorName": "OgUltra Team",
+  "Meta": {
+    "Version": "OgUltra Images (v1)"
+  }
+}

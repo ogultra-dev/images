@@ -1,0 +1,19 @@
+{
+  "Image": "quay.io/skyport/python:lts",
+  "Cmd": "",
+  "Env": [
+    "START=pip install -r requirements.txt && python bot.py"
+  ],
+  "StopCommand": "^C",
+  "Scripts": {
+    "Install": []
+  },
+  "Variables": {},
+  "Name": "Bot: Discord (Python)",
+  "Description": "Generic Python environment for hosting Discord bots. Uses discord.py or other Python-based Discord libraries. Upload your bot files and configure your start command.",
+  "Author": "admin@ogultra.net",
+  "AuthorName": "OgUltra Team",
+  "Meta": {
+    "Version": "OgUltra Images (v1)"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "Image": "ghcr.io/skyport-team/images/nodejs:22",
+  "AltImages": [
+    "ghcr.io/skyport-team/images/nodejs:22",
+    "ghcr.io/skyport-team/images/nodejs:20",
+    "ghcr.io/skyport-team/images/nodejs:18",
+    "ghcr.io/skyport-team/images/nodejs:16"
+  ],
+  "Cmd": "",
+  "Env": [
+    "START=npm install && npm start"
+  ],
+  "Scripts": {
+    "Install": []
+  },
+  "Variables": {},
+  "Name": "Generic: Node.js",
+  "Description": "Generic Node.js runtime environment. Supports any Node.js application including APIs, bots, web servers, and more.",
+  "Author": "admin@ogultra.net",
+  "AuthorName": "OgUltra Team",
+  "Meta": {
+    "Version": "OgUltra Images (v1)"
+  }
+}

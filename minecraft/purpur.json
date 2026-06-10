@@ -1,0 +1,38 @@
+{
+  "Image": "ghcr.io/skyport-team/images/java:21",
+  "AltImages": [
+    "ghcr.io/skyport-team/images/java:21",
+    "ghcr.io/skyport-team/images/java:17",
+    "ghcr.io/skyport-team/images/java:16"
+  ],
+  "Cmd": "",
+  "Env": [
+    "START=java -Xms128M -XX:MaxRAMPercentage=95.0 -Dterminal.jline=false -Dterminal.ansi=true -jar server.jar"
+  ],
+  "StopCommand": "stop",
+  "features": [
+    "eula"
+  ],
+  "Scripts": {
+    "Install": [
+      {
+        "Uri": "https://api.purpurmc.org/v2/purpur/{{Version}}/latest/download",
+        "Path": "server.jar"
+      }
+    ]
+  },
+  "Variables": {
+    "Version": {
+      "type": "text",
+      "default": "1.21.4",
+      "required": true
+    }
+  },
+  "Name": "Minecraft Java: Purpur",
+  "Description": "Purpur is a fork of Pufferfish/Paper focused on gameplay enhancements and extreme configurability. Supports Bukkit, Spigot, and Paper plugins.",
+  "Author": "admin@ogultra.net",
+  "AuthorName": "OgUltra Team",
+  "Meta": {
+    "Version": "OgUltra Images (v1)"
+  }
+}

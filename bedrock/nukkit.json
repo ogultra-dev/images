@@ -1,0 +1,28 @@
+{
+  "Image": "ghcr.io/skyport-team/images/java:21",
+  "AltImages": [
+    "ghcr.io/skyport-team/images/java:21",
+    "ghcr.io/skyport-team/images/java:17"
+  ],
+  "Cmd": "",
+  "Env": [
+    "START=java -Xms128M -XX:MaxRAMPercentage=95.0 -jar nukkit.jar"
+  ],
+  "StopCommand": "stop",
+  "Scripts": {
+    "Install": [
+      {
+        "Uri": "https://ci.openmc.io/job/NukkitX/lastSuccessfulBuild/artifact/target/nukkit-1.0-SNAPSHOT.jar",
+        "Path": "nukkit.jar"
+      }
+    ]
+  },
+  "Variables": {},
+  "Name": "Minecraft Bedrock: Nukkit",
+  "Description": "Nukkit is a nuclear-powered server software for Minecraft Bedrock Edition written in Java. Features a plugin API and cross-platform support.",
+  "Author": "admin@ogultra.net",
+  "AuthorName": "OgUltra Team",
+  "Meta": {
+    "Version": "OgUltra Images (v1)"
+  }
+}

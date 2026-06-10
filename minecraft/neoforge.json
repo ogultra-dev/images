@@ -1,0 +1,37 @@
+{
+  "Image": "ghcr.io/skyport-team/images/java:21",
+  "AltImages": [
+    "ghcr.io/skyport-team/images/java:21",
+    "ghcr.io/skyport-team/images/java:17"
+  ],
+  "Cmd": "",
+  "Env": [
+    "START=java -Xms128M -XX:MaxRAMPercentage=95.0 @libraries/net/neoforged/neoforge/{{NeoForgeVersion}}/unix_args.txt nogui"
+  ],
+  "StopCommand": "stop",
+  "features": [
+    "eula"
+  ],
+  "Scripts": {
+    "Install": [
+      {
+        "Uri": "https://maven.neoforged.net/releases/net/neoforged/neoforge/{{NeoForgeVersion}}/neoforge-{{NeoForgeVersion}}-installer.jar",
+        "Path": "neoforge-installer.jar"
+      }
+    ]
+  },
+  "Variables": {
+    "NeoForgeVersion": {
+      "type": "text",
+      "default": "21.4.0-beta",
+      "required": true
+    }
+  },
+  "Name": "Minecraft Java: NeoForge",
+  "Description": "NeoForge is a community-driven fork of Minecraft Forge with improved performance, a modernized codebase, and better tooling support.",
+  "Author": "admin@ogultra.net",
+  "AuthorName": "OgUltra Team",
+  "Meta": {
+    "Version": "OgUltra Images (v1)"
+  }
+}

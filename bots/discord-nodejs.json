@@ -1,0 +1,25 @@
+{
+  "Image": "ghcr.io/skyport-team/images/nodejs:20",
+  "AltImages": [
+    "ghcr.io/skyport-team/images/nodejs:22",
+    "ghcr.io/skyport-team/images/nodejs:20",
+    "ghcr.io/skyport-team/images/nodejs:18",
+    "ghcr.io/skyport-team/images/nodejs:16"
+  ],
+  "Cmd": "",
+  "Env": [
+    "START=npm install && node index.js"
+  ],
+  "StopCommand": "^C",
+  "Scripts": {
+    "Install": []
+  },
+  "Variables": {},
+  "Name": "Bot: Discord (Node.js)",
+  "Description": "Generic Node.js environment for hosting Discord bots using discord.js or similar libraries. Upload your bot files and configure your start command.",
+  "Author": "admin@ogultra.net",
+  "AuthorName": "OgUltra Team",
+  "Meta": {
+    "Version": "OgUltra Images (v1)"
+  }
+}

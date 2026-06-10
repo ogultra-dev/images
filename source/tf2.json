@@ -1,0 +1,40 @@
+{
+  "Image": "ubuntu:22.04",
+  "Cmd": "",
+  "Env": [
+    "START=./srcds_run -game tf -console -usercon +sv_pure 1 +map {{Map}} -port {{Port}} +maxplayers {{MaxPlayers}}"
+  ],
+  "StopCommand": "quit",
+  "Scripts": {
+    "Install": [
+      {
+        "Uri": "https://steamcdn-a.akamaihd.net/client/installer/steamcmd_linux.tar.gz",
+        "Path": "steamcmd.tar.gz"
+      }
+    ]
+  },
+  "Variables": {
+    "Map": {
+      "type": "text",
+      "default": "cp_badlands",
+      "required": false
+    },
+    "Port": {
+      "type": "text",
+      "default": "27015",
+      "required": true
+    },
+    "MaxPlayers": {
+      "type": "text",
+      "default": "24",
+      "required": false
+    }
+  },
+  "Name": "Game: Team Fortress 2",
+  "Description": "Team Fortress 2 dedicated server via srcds. Supports all TF2 game modes including casual, competitive, and custom servers.",
+  "Author": "admin@ogultra.net",
+  "AuthorName": "OgUltra Team",
+  "Meta": {
+    "Version": "OgUltra Images (v1)"
+  }
+}

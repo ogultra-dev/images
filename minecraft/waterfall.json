@@ -1,0 +1,40 @@
+{
+  "Image": "ghcr.io/skyport-team/images/java:17",
+  "AltImages": [
+    "ghcr.io/skyport-team/images/java:21",
+    "ghcr.io/skyport-team/images/java:17",
+    "ghcr.io/skyport-team/images/java:16"
+  ],
+  "Cmd": "",
+  "Env": [
+    "START=java -Xms128M -XX:MaxRAMPercentage=95.0 -jar waterfall.jar"
+  ],
+  "StopCommand": "end",
+  "Scripts": {
+    "Install": [
+      {
+        "Uri": "https://api.papermc.io/v2/projects/waterfall/versions/{{Version}}/builds/{{Build}}/downloads/waterfall-{{Version}}-{{Build}}.jar",
+        "Path": "waterfall.jar"
+      }
+    ]
+  },
+  "Variables": {
+    "Version": {
+      "type": "text",
+      "default": "1.21",
+      "required": true
+    },
+    "Build": {
+      "type": "text",
+      "default": "latest",
+      "required": true
+    }
+  },
+  "Name": "Minecraft Java: Waterfall",
+  "Description": "Waterfall is a PaperMC fork of BungeeCord with improved performance, stability, and an expanded API.",
+  "Author": "admin@ogultra.net",
+  "AuthorName": "OgUltra Team",
+  "Meta": {
+    "Version": "OgUltra Images (v1)"
+  }
+}

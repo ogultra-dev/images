@@ -1,0 +1,18 @@
+{
+  "Image": "quay.io/skyport/python:lts",
+  "Cmd": "",
+  "Env": [
+    "START=pip install -r requirements.txt && python app.py"
+  ],
+  "Scripts": {
+    "Install": []
+  },
+  "Variables": {},
+  "Name": "Generic: Python",
+  "Description": "Generic Python runtime environment. Supports Python 3.x applications, bots, web scrapers, APIs, and automation scripts.",
+  "Author": "admin@ogultra.net",
+  "AuthorName": "OgUltra Team",
+  "Meta": {
+    "Version": "OgUltra Images (v1)"
+  }
+}

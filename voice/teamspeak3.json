@@ -1,0 +1,30 @@
+{
+  "Image": "ubuntu:22.04",
+  "Cmd": "",
+  "Env": [
+    "START=./ts3server_minimal_runscript.sh"
+  ],
+  "StopCommand": "^C",
+  "Scripts": {
+    "Install": [
+      {
+        "Uri": "https://files.teamspeak-services.com/releases/server/{{Version}}/teamspeak3-server_linux_amd64-{{Version}}.tar.bz2",
+        "Path": "teamspeak.tar.bz2"
+      }
+    ]
+  },
+  "Variables": {
+    "Version": {
+      "type": "text",
+      "default": "3.13.7",
+      "required": true
+    }
+  },
+  "Name": "Voice: TeamSpeak 3",
+  "Description": "TeamSpeak 3 is a proprietary voice-over-IP software with a client-server architecture. Widely used for gaming communities.",
+  "Author": "admin@ogultra.net",
+  "AuthorName": "OgUltra Team",
+  "Meta": {
+    "Version": "OgUltra Images (v1)"
+  }
+}

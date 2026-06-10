@@ -1,0 +1,48 @@
+{
+  "Image": "ghcr.io/skyport-team/images/java:21",
+  "AltImages": [
+    "ghcr.io/skyport-team/images/java:21",
+    "ghcr.io/skyport-team/images/java:17",
+    "ghcr.io/skyport-team/images/java:16"
+  ],
+  "Cmd": "",
+  "Env": [
+    "START=java -Xms128M -XX:MaxRAMPercentage=95.0 -Dterminal.jline=false -Dterminal.ansi=true -jar fabric-server-launch.jar nogui"
+  ],
+  "StopCommand": "stop",
+  "features": [
+    "eula"
+  ],
+  "Scripts": {
+    "Install": [
+      {
+        "Uri": "https://meta.fabricmc.net/v2/versions/loader/{{Version}}/{{LoaderVersion}}/{{InstallerVersion}}/server/jar",
+        "Path": "fabric-server-launch.jar"
+      }
+    ]
+  },
+  "Variables": {
+    "Version": {
+      "type": "text",
+      "default": "1.21.4",
+      "required": true
+    },
+    "LoaderVersion": {
+      "type": "text",
+      "default": "0.16.9",
+      "required": true
+    },
+    "InstallerVersion": {
+      "type": "text",
+      "default": "1.0.1",
+      "required": true
+    }
+  },
+  "Name": "Minecraft Java: Fabric",
+  "Description": "Fabric is a lightweight modding toolchain for Minecraft known for fast updates and a thriving ecosystem of performance mods like Sodium and Lithium.",
+  "Author": "admin@ogultra.net",
+  "AuthorName": "OgUltra Team",
+  "Meta": {
+    "Version": "OgUltra Images (v1)"
+  }
+}

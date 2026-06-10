@@ -1,0 +1,40 @@
+{
+  "Image": "ubuntu:22.04",
+  "Cmd": "",
+  "Env": [
+    "START=./srcds_run -game garrysmod -console +gamemode {{GameMode}} +map {{Map}} +maxplayers {{MaxPlayers}}"
+  ],
+  "StopCommand": "quit",
+  "Scripts": {
+    "Install": [
+      {
+        "Uri": "https://steamcdn-a.akamaihd.net/client/installer/steamcmd_linux.tar.gz",
+        "Path": "steamcmd.tar.gz"
+      }
+    ]
+  },
+  "Variables": {
+    "GameMode": {
+      "type": "text",
+      "default": "sandbox",
+      "required": false
+    },
+    "Map": {
+      "type": "text",
+      "default": "gm_flatgrass",
+      "required": false
+    },
+    "MaxPlayers": {
+      "type": "text",
+      "default": "16",
+      "required": false
+    }
+  },
+  "Name": "Game: Garry's Mod",
+  "Description": "Garry's Mod (GMod) dedicated server via srcds. Supports hundreds of community gamemodes including DarkRP, Prophunt, TTT, and more.",
+  "Author": "admin@ogultra.net",
+  "AuthorName": "OgUltra Team",
+  "Meta": {
+    "Version": "OgUltra Images (v1)"
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "Image": "ghcr.io/skyport-team/images/java:21",
+  "AltImages": [
+    "ghcr.io/skyport-team/images/java:21",
+    "ghcr.io/skyport-team/images/java:17",
+    "ghcr.io/skyport-team/images/java:16",
+    "ghcr.io/skyport-team/images/java:11",
+    "ghcr.io/skyport-team/images/java:8"
+  ],
+  "Cmd": "",
+  "Env": [
+    "START=java -Xms128M -XX:MaxRAMPercentage=95.0 -Dterminal.jline=false -Dterminal.ansi=true -jar server.jar"
+  ],
+  "StopCommand": "stop",
+  "features": [
+    "eula"
+  ],
+  "Scripts": {
+    "Install": [
+      {
+        "Uri": "https://cdn.getbukkit.org/spigot/spigot-{{Version}}.jar",
+        "Path": "server.jar"
+      }
+    ]
+  },
+  "Variables": {
+    "Version": {
+      "type": "text",
+      "default": "1.21.4",
+      "required": true
+    }
+  },
+  "Name": "Minecraft Java: SpigotMC",
+  "Description": "SpigotMC is a high-performance fork of CraftBukkit for Minecraft Java Edition. Supports Bukkit plugins with extensive configuration options.",
+  "Author": "admin@ogultra.net",
+  "AuthorName": "OgUltra Team",
+  "Meta": {
+    "Version": "OgUltra Images (v1)"
+  }
+}

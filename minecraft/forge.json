@@ -1,0 +1,45 @@
+{
+  "Image": "ghcr.io/skyport-team/images/java:17",
+  "AltImages": [
+    "ghcr.io/skyport-team/images/java:21",
+    "ghcr.io/skyport-team/images/java:17",
+    "ghcr.io/skyport-team/images/java:16",
+    "ghcr.io/skyport-team/images/java:11",
+    "ghcr.io/skyport-team/images/java:8"
+  ],
+  "Cmd": "",
+  "Env": [
+    "START=java -Xms128M -XX:MaxRAMPercentage=95.0 @user_jvm_args.txt @libraries/net/minecraftforge/forge/{{Version}}-{{ForgeVersion}}/unix_args.txt nogui"
+  ],
+  "StopCommand": "stop",
+  "features": [
+    "eula"
+  ],
+  "Scripts": {
+    "Install": [
+      {
+        "Uri": "https://maven.minecraftforge.net/net/minecraftforge/forge/{{Version}}-{{ForgeVersion}}/forge-{{Version}}-{{ForgeVersion}}-installer.jar",
+        "Path": "forge-installer.jar"
+      }
+    ]
+  },
+  "Variables": {
+    "Version": {
+      "type": "text",
+      "default": "1.20.1",
+      "required": true
+    },
+    "ForgeVersion": {
+      "type": "text",
+      "default": "47.3.0",
+      "required": true
+    }
+  },
+  "Name": "Minecraft Java: Forge",
+  "Description": "Minecraft Forge is the most popular mod loader for Minecraft Java Edition with thousands of mods available.",
+  "Author": "admin@ogultra.net",
+  "AuthorName": "OgUltra Team",
+  "Meta": {
+    "Version": "OgUltra Images (v1)"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "Image": "ubuntu:22.04",
+  "Cmd": "",
+  "Env": [
+    "START=murmurd -ini murmur.ini"
+  ],
+  "StopCommand": "^C",
+  "Scripts": {
+    "Install": []
+  },
+  "Variables": {
+    "Port": {
+      "type": "text",
+      "default": "64738",
+      "required": true
+    }
+  },
+  "Name": "Voice: Mumble (Murmur)",
+  "Description": "Mumble is a free, open-source, low-latency, high quality voice chat application primarily intended for use while gaming.",
+  "Author": "admin@ogultra.net",
+  "AuthorName": "OgUltra Team",
+  "Meta": {
+    "Version": "OgUltra Images (v1)"
+  }
+}

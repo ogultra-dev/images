@@ -1,0 +1,28 @@
+{
+  "Image": "ghcr.io/skyport-team/images/java:21",
+  "AltImages": [
+    "ghcr.io/skyport-team/images/java:21",
+    "ghcr.io/skyport-team/images/java:17"
+  ],
+  "Cmd": "",
+  "Env": [
+    "START=java -Xms64M -XX:MaxRAMPercentage=95.0 -jar limbo.jar"
+  ],
+  "StopCommand": "stop",
+  "Scripts": {
+    "Install": [
+      {
+        "Uri": "https://github.com/LOOHP/Limbo/releases/latest/download/Limbo.jar",
+        "Path": "limbo.jar"
+      }
+    ]
+  },
+  "Variables": {},
+  "Name": "Minecraft Java: Limbo",
+  "Description": "Limbo is a lightweight void Minecraft server used as a fallback server in proxy networks. Extremely low resource usage.",
+  "Author": "admin@ogultra.net",
+  "AuthorName": "OgUltra Team",
+  "Meta": {
+    "Version": "OgUltra Images (v1)"
+  }
+}

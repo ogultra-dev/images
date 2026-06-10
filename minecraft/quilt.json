@@ -1,0 +1,37 @@
+{
+  "Image": "ghcr.io/skyport-team/images/java:21",
+  "AltImages": [
+    "ghcr.io/skyport-team/images/java:21",
+    "ghcr.io/skyport-team/images/java:17"
+  ],
+  "Cmd": "",
+  "Env": [
+    "START=java -Xms128M -XX:MaxRAMPercentage=95.0 -jar quilt-server-launch.jar nogui"
+  ],
+  "StopCommand": "stop",
+  "features": [
+    "eula"
+  ],
+  "Scripts": {
+    "Install": [
+      {
+        "Uri": "https://quiltmc.org/api/v1/download-latest-installer/java-universal",
+        "Path": "quilt-installer.jar"
+      }
+    ]
+  },
+  "Variables": {
+    "Version": {
+      "type": "text",
+      "default": "1.21.4",
+      "required": true
+    }
+  },
+  "Name": "Minecraft Java: Quilt",
+  "Description": "Quilt is a community-driven fork of Fabric with enhanced features and open governance. Compatible with most Fabric mods.",
+  "Author": "admin@ogultra.net",
+  "AuthorName": "OgUltra Team",
+  "Meta": {
+    "Version": "OgUltra Images (v1)"
+  }
+}

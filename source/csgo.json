@@ -1,0 +1,45 @@
+{
+  "Image": "ubuntu:22.04",
+  "Cmd": "",
+  "Env": [
+    "START=./srcds_run -game csgo -console -usercon +game_type {{GameType}} +game_mode {{GameMode}} +mapgroup mg_active +map {{Map}} -tickrate {{Tickrate}}"
+  ],
+  "StopCommand": "quit",
+  "Scripts": {
+    "Install": [
+      {
+        "Uri": "https://steamcdn-a.akamaihd.net/client/installer/steamcmd_linux.tar.gz",
+        "Path": "steamcmd.tar.gz"
+      }
+    ]
+  },
+  "Variables": {
+    "GameType": {
+      "type": "text",
+      "default": "0",
+      "required": false
+    },
+    "GameMode": {
+      "type": "text",
+      "default": "1",
+      "required": false
+    },
+    "Map": {
+      "type": "text",
+      "default": "de_dust2",
+      "required": false
+    },
+    "Tickrate": {
+      "type": "text",
+      "default": "128",
+      "required": false
+    }
+  },
+  "Name": "Game: CS:GO",
+  "Description": "Counter-Strike: Global Offensive dedicated server running via Steam's srcds. Supports Competitive, Arms Race, Deathmatch, and other modes.",
+  "Author": "admin@ogultra.net",
+  "AuthorName": "OgUltra Team",
+  "Meta": {
+    "Version": "OgUltra Images (v1)"
+  }
+}

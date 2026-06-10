@@ -1,0 +1,41 @@
+{
+  "Image": "ubuntu:22.04",
+  "Cmd": "",
+  "Env": [
+    "START=./game/bin/linuxsteamrt64/cs2 -dedicated -console -port {{Port}} +map {{Map}} +sv_setsteamaccount {{SteamToken}}"
+  ],
+  "StopCommand": "quit",
+  "Scripts": {
+    "Install": [
+      {
+        "Uri": "https://steamcdn-a.akamaihd.net/client/installer/steamcmd_linux.tar.gz",
+        "Path": "steamcmd.tar.gz"
+      }
+    ]
+  },
+  "Variables": {
+    "Port": {
+      "type": "text",
+      "default": "27015",
+      "required": true
+    },
+    "Map": {
+      "type": "text",
+      "default": "de_dust2",
+      "required": false
+    },
+    "SteamToken": {
+      "type": "text",
+      "default": "",
+      "required": false,
+      "description": "GSLT token from Steam. Get one at https://steamcommunity.com/dev/managegameservers"
+    }
+  },
+  "Name": "Game: CS2",
+  "Description": "Counter-Strike 2 dedicated server. The next evolution of the world's #1 tactical shooter, built on Source 2 engine.",
+  "Author": "admin@ogultra.net",
+  "AuthorName": "OgUltra Team",
+  "Meta": {
+    "Version": "OgUltra Images (v1)"
+  }
+}

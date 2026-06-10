@@ -1,0 +1,39 @@
+{
+  "Image": "ghcr.io/skyport-team/images/java:21",
+  "AltImages": [
+    "ghcr.io/skyport-team/images/java:21",
+    "ghcr.io/skyport-team/images/java:17"
+  ],
+  "Cmd": "",
+  "Env": [
+    "START=java -Xms128M -XX:MaxRAMPercentage=95.0 -XX:+UseG1GC -XX:G1HeapRegionSize=4M -XX:+UnlockExperimentalVMOptions -XX:+ParallelRefProcEnabled -XX:+AlwaysPreTouch -jar velocity.jar"
+  ],
+  "StopCommand": "shutdown",
+  "Scripts": {
+    "Install": [
+      {
+        "Uri": "https://api.papermc.io/v2/projects/velocity/versions/{{Version}}/builds/{{Build}}/downloads/velocity-{{Version}}-{{Build}}.jar",
+        "Path": "velocity.jar"
+      }
+    ]
+  },
+  "Variables": {
+    "Version": {
+      "type": "text",
+      "default": "3.3.0-SNAPSHOT",
+      "required": true
+    },
+    "Build": {
+      "type": "text",
+      "default": "latest",
+      "required": true
+    }
+  },
+  "Name": "Minecraft Java: Velocity",
+  "Description": "Velocity is a modern high-performance proxy by PaperMC. Faster and more secure than BungeeCord with excellent plugin support.",
+  "Author": "admin@ogultra.net",
+  "AuthorName": "OgUltra Team",
+  "Meta": {
+    "Version": "OgUltra Images (v1)"
+  }
+}
